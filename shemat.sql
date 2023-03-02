@@ -2,7 +2,7 @@ create database projet_perso;
 
 create table chapitre(
     id integer unique not null,
-    text varchar (65 535),
+    text blob (65 535),
     primary key(id)
 ) ;
 create table parcours (
@@ -11,7 +11,7 @@ create table parcours (
     ordre Varchar(10),
     primary key (id, email),
     FOREIGN key (id) references chapitre(id),
-    FOREIGN key (email) references parcours(email)
+    FOREIGN key (email) references lecteur(email)
 
 );
 create table lecteur(
