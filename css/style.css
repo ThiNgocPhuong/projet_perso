@@ -5,6 +5,7 @@ html,body{
 
 body{
     min-height: 100vh;
+    background-color: #272C2B ;
 }
   
 header{
@@ -52,3 +53,6 @@ header .navbar ul li:focus-within > ul,
 header .navbar ul li:hover > ul{
     display: initial;
 }
+
+
+
