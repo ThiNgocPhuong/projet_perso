@@ -22,23 +22,35 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/histoires.css">
     <title>Histoire</title>
     </header>
     <body>
-        <h1>Le commencement</h1>
-        <?php
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<br><br>".$row["text"]."<br><br>";
-                }
-                echo "</table>";
-            } else {
-                echo "Aucun résultat trouvé.";
-            }
+        <div class="conteneur">
+            <h1>Le commencement</h1>
+            <div class="text">
+                <?php
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<br><br>".$row["text"]."<br><br>";
+                        }
+                    } else {
+                        echo "Aucun résultat trouvé.";
+                    }
 
-            // Fermeture de la connexion
-            $conn->close();
-        ?>
+                    // Fermeture de la connexion
+                    $conn->close();
+                ?>
+            </div>
+            <div class="choix">
+                <form action="./choix1.php" method="get" enctype="multipart/form-data">
+                    <input type="submit" value="Choix 1">
+                </form>
+                <form action="./choix2.php" method="get" enctype="multipart/form-data">
+                    <input type="submit" value="Choix 2">
+                </form>
+            </div>
+        </div>
     </body>
 </html>
 

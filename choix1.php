@@ -25,18 +25,22 @@ $result = $conn->query($sql);
     <title>Histoire</title>
     </header>
     <body>
-        <h1>Le commencement</h1>
-        <?php
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<br><br>".$row["text"]."<br><br>";
-                }
-            } else {
-                echo "Aucun résultat trouvé.";
-            }
+        <div class="conteneur">
+            <h1>Le commencement</h1>
+            <div class="text">
+                <?php
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<br><br>".$row["text"]."<br><br>";
+                        }
+                    } else {
+                        echo "Aucun résultat trouvé.";
+                    }
 
-            // Fermeture de la connexion
-            $conn->close();
-        ?>
+                    // Fermeture de la connexion
+                    $conn->close();
+                ?>
+            </div>
+        </div>
     </body>
 </html>
