@@ -18,8 +18,9 @@
             </ul>
         </nav>
     </header>
+    <br>
     <form action="new_lecteur.php" method="post" enctype="multipart/form-data">
-        <div class="contain">
+        <div class="contain" style="margin: 150px 254px 65px 185px; ">
             <div class="input_email">
                 <label for="email">Adresse Mail</label><br>
                 <input type="text" name="email" id="email" placeholder="Veuillez saisir votre email" pattern='(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))' required>
