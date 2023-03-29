@@ -1,0 +1,20 @@
+html,body{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #272C2B ;
+    margin-left: 50px; 
+    margin-right: 50px;
+}
+
+body div.conteneur{
+    color: white;
+    font-size: 20px;
+}
+
+div.conteneur h1{
+    text-align: center;
+}
