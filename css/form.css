@@ -1,0 +1,69 @@
+form{
+    background-size: cover;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 135px;
+}
+
+p{
+    color: #ffffff;
+}
+
+div.contain{
+    border: 3px solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 10px 20px 20px 20px;
+    width: 55%;
+    background: #000000;
+}
+
+div #email, div #pseudo, div #mdp, div #confirm_mdp{
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: 100px;
+    text-align: left;
+    
+}
+
+div.contain label{
+    position: relative;
+    font-size: 115% ;
+    font-weight: bold;
+    text-align: left;
+    color: #ffffff;
+}
+
+input[type=text], input[type=password]
+{
+    width: 96.5%;
+    box-sizing: border-box;
+    padding : 10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+    border-radius:10px;
+}
+
+input[type=submit]{
+    background-color: #18695D ;
+    color: #ffffff;
+    padding: 12px 15px;
+    font-size: 115% ;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    border-radius:10px;
+}
+
+input[type=submit]:hover{
+    color: #18695D;
+    background-color: #ffffff;
+}
