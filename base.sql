@@ -1,3 +1,11 @@
+create user Caroline identified by "pingu";
+grant all privilege on projet_perso to Caroline;
+
+create user Reader identified by "L3cteur*$";
+grant insert, select on projet_perso.lecteur to Reader;
+grant insert, select on projet_perso.parcours to Reader;
+
+
 create database projet_perso;
 
 create table chapitre(
@@ -25,7 +33,15 @@ create table parcours (
 
 Insert into chapitre(id ,text) Values 
 (
-    1,'La journée touche enfin à sa fin. Il est dix-huit heures et le soleil commence à se coucher. Je suis en train de ranger mes affaires dans les vestiaires avant de quitter le salon de thé. Avant de partir, je prends le temps de saluer mes collègues ainsi que mes employeurs, Monsieur et Madame Wood, deux personnes âgées adorables qui ne se sont jamais mariées ni n''ont eu d''enfants. Ils expliquent cela en disant que personne n''a jamais réussi à les supporter plus de deux heures, ce qui rend impensable de finir leur vie avec l''un d''entre eux. Comment je sais tout ça? Une fois par mois, ils invitent tous leurs employés à prendre le goûter et privatisent le salon spécialement pour cela. Je me considère chanceuse d''avoir des patrons aussi gentils et compréhensifs, qui ont accepté d''embaucher une adolescente tout juste majeure ayant la responsabilité de son petit frère.'
+    1,'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa eget egestas purus viverra. Quis eleifend quam adipiscing vitae proin sagittis nisl. Viverra adipiscing at in tellus integer. Elit sed vulputate mi sit amet mauris. Proin sagittis nisl rhoncus mattis rhoncus urna. Ultrices dui sapien eget mi proin sed libero enim. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Sagittis id consectetur purus ut. Suscipit tellus mauris a diam. Cras adipiscing enim eu turpis egestas pretium aenean pharetra. Sed turpis tincidunt id aliquet. Sit amet est placerat in.
+
+Eu turpis egestas pretium aenean pharetra magna ac. Scelerisque mauris pellentesque pulvinar pellentesque. Id eu nisl nunc mi ipsum. Molestie at elementum eu facilisis sed odio morbi quis commodo. Eget arcu dictum varius duis. Velit scelerisque in dictum non consectetur a erat nam. Ultricies integer quis auctor elit sed vulputate mi sit amet. At imperdiet dui accumsan sit amet nulla facilisi. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida. Volutpat est velit egestas dui. Iaculis eu non diam phasellus vestibulum. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Sed velit dignissim sodales ut eu sem integer vitae.
+
+Porttitor rhoncus dolor purus non enim praesent elementum. Justo donec enim diam vulputate ut pharetra sit amet. Sagittis orci a scelerisque purus. Nulla facilisi cras fermentum odio eu feugiat. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Sodales ut etiam sit amet nisl purus. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Magnis dis parturient montes nascetur ridiculus mus mauris vitae. Vitae purus faucibus ornare suspendisse sed. Nunc sed velit dignissim sodales ut. Gravida in fermentum et sollicitudin ac. Netus et malesuada fames ac turpis. Sed cras ornare arcu dui vivamus.
+
+Ac turpis egestas sed tempus. Sit amet commodo nulla facilisi. Felis eget nunc lobortis mattis aliquam. Facilisis mauris sit amet massa vitae. In nisl nisi scelerisque eu ultrices vitae auctor eu augue. Purus viverra accumsan in nisl nisi scelerisque eu. Felis eget nunc lobortis mattis aliquam faucibus purus in. Purus in mollis nunc sed id. Blandit turpis cursus in hac habitasse platea. Vitae congue eu consequat ac. In eu mi bibendum neque. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Aliquet nibh praesent tristique magna sit amet purus gravida. Morbi non arcu risus quis varius quam. A diam maecenas sed enim ut sem viverra aliquet. Morbi leo urna molestie at elementum eu facilisis sed. Consectetur a erat nam at.
+
+In dictum non consectetur a erat nam at lectus urna. Eget duis at tellus at urna condimentum mattis. Mauris vitae ultricies leo integer. Pellentesque sit amet porttitor eget dolor. Duis at consectetur lorem donec. Nulla pharetra diam sit amet. Morbi tincidunt augue interdum velit euismod in pellentesque. Pulvinar neque laoreet suspendisse interdum consectetur libero. Lacus sed turpis tincidunt id aliquet risus feugiat. Eu augue ut lectus arcu bibendum at. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Curabitur gravida arcu ac tortor. Morbi tempus iaculis urna id volutpat lacus laoreet non. Fermentum et sollicitudin ac orci phasellus. Vulputate dignissim suspendisse in est ante in nibh. Egestas quis ipsum suspendisse ultrices gravida.'
 ),
 (
     2, '2   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Nec ullamcorper sit amet risus nullam eget. Sapien eget mi proin sed libero. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Erat pellentesque adipiscing commodo elit at imperdiet dui. Id consectetur purus ut faucibus pulvinar elementum integer. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Mattis enim ut tellus elementum sagittis vitae. Sit amet tellus cras adipiscing enim eu turpis.
@@ -142,3 +158,4 @@ Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. In massa t
 Massa sed elementum tempus egestas sed sed risus pretium. Dis parturient montes nascetur ridiculus mus mauris. Neque egestas congue quisque egestas diam in arcu cursus euismod. Amet nulla facilisi morbi tempus iaculis. Et sollicitudin ac orci phasellus egestas tellus rutrum. Curabitur vitae nunc sed velit dignissim. Mollis nunc sed id semper risus in. Nibh cras pulvinar mattis nunc. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Nam aliquam sem et tortor consequat id. Sed arcu non odio euismod lacinia at quis. Bibendum enim facilisis gravida neque convallis. Vel facilisis volutpat est velit egestas dui id ornare. Nunc sed velit dignissim sodales ut eu sem integer vitae. Risus sed vulputate odio ut. Fermentum iaculis eu non diam phasellus vestibulum. Quis hendrerit dolor magna eget est lorem. Dui sapien eget mi proin sed libero. Cum sociis natoque penatibus et magnis dis. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat.'
 )
 ;
+
