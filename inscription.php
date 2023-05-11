@@ -35,50 +35,32 @@
                 <label for="mdp">Mot de passe</label><br>
                 <input type="password" name="mdp" id="mdp" placeholder="Veuillez saisir votre mot de passe" pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,}$' >
             </div>
-            <div id="input_confirm_mdp" >
-                <label for="confirm_mdp">Confirmation du mot de passe</label><br>
-                <input type="password" name="confirm_mdp" onchange="validate()" id="confirm_mdp" placeholder="Veuillez ressaisir votre mot de passe" required>
-                <p>Pour que votre mot de passe soit accepté, il doit comporter au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial. De plus, sa longueur doit être d'au moins 12 caractères.</p>
-            </div>
             <div id="checkCons">
-                <input type="checkbox" id="cons" name="cons">
-                 <label for="cons">En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de cette application web. Ces données ne pourront être exploiter que par la gérente de cette application.</label>
+                <input type="checkbox" onchange="isChecked()" id="cons" name="cons" onchange="isValid()">
+                <label for="cons">En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de cette application web. Ces données ne pourront être exploiter que par la gérente de cette application.</label>
             </div>
             <br>
             <div id="bouton" >
-                <input type="submit" id="valid"  value="Inscription">
+                <input type="submit" disabled id="valid"  value="Inscription">
             </div>
         </div>
     </form>
 </body>
 <script type="text/javascript">
-          function validate() {
-     
-               var a = document.getElementById("mdp").value;
-               var b = document.getElementById("confirm_mdp").value;
-               document.getElementById("valid").disabled=false;
-          
-               if (a!=b) {
-                    alert("Le mot de passe ne correspondent pas.");  
-                   return false; 
-               }else{
-                    return true;
-               }
-          }
 
-          function consentement () {
-            var a = document.getElementById("cons").value;
-
-            if (a!=true) {
-                alrte("Veuillez accepter la collecte de donnée");
-                return false;
-            }else{
+          function isChecked(){
+            var checkbox = document.getElementById("cons");
+            if (checkbox.checked){
                 return true;
+            } else {
+                alert("Vous devez accepter la collecte de donnée."); 
+                return false;
             }
           }
 
           function isValid(){
-            
+            var isValid = isChecked();
+            document.getElementById("valid").disabled = !isValid;
           }
      </script>
 </html>
