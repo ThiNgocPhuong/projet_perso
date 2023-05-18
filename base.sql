@@ -5,6 +5,7 @@ create user Reader identified by "L3cteur*$";
 grant insert, select on projet_perso.lecteur to Reader;
 grant insert, select on projet_perso.parcours to Reader;
 
+alter table lecteur ADD date_concentement date;
 
 create database projet_perso;
 
@@ -15,9 +16,10 @@ create table chapitre(
 ) ;
 
 create table lecteur(
-    email Varchar(50),
+    email Varchar(100),
     pseudo varchar(50),
-    mdp varchar(50),
+    mdp varchar(100),
+    date_concentement date,
     primary key(email)
 );
 

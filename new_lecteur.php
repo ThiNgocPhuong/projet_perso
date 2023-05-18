@@ -1,18 +1,18 @@
 <?php
     //connexion à la database
-    $user="Caroline";
-    $pass="pingu";
+    include 'db.inc.php';
 
     $mes="";
 
     try{
-        $objPDO=new PDO('mysql:host=localhost;dbname=projet_perso', $user, $pass);
+        $objetPDO = new PDO('mysql:dbname='.BDD.';host='.HOST.';port='.PORT,LOGIN,PASSW);
 
-        $request=$objPDO->prepare('INSERT INTO lecteur (email, pseudo, mdp) Values(:email, :pseudo, :mdp)');
+        $request=$objetPDO->prepare('INSERT INTO lecteur (email, pseudo, mdp, date_concentement) Values(:email, :pseudo, :mdp, :date)');
 
         $request->bindValue(':email',$_POST['email'], PDO:: PARAM_STR);
         $request->bindValue(':pseudo', $_POST['pseudo'], PDO:: PARAM_STR);
-        $request->bindValue(':mdp', $_POST['mdp'], PDO::PARAM_STR);
+        $request->bindValue(':mdp', password_hash(':mdp',PASSWORD_DEFAULT));
+        $request->bindValue(':date',date("Y-m-d"));
 
         $insertValid= $request->execute();
 

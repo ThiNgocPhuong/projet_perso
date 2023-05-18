@@ -34,6 +34,7 @@
             <div class="input_mdp">
                 <label for="mdp">Mot de passe</label><br>
                 <input type="password" name="mdp" id="mdp" placeholder="Veuillez saisir votre mot de passe" pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,}$' >
+                <p>Votre mot de passe doit contenir au moin 12 caractères, une majuscule, une minuscule, un chiffre et un caractère spéciale</p>
             </div>
             <div id="checkCons">
                 <input type="checkbox" onchange="isChecked()" id="cons" name="cons" onchange="isValid()">
@@ -47,20 +48,23 @@
     </form>
 </body>
 <script type="text/javascript">
+    function isChecked() {
+        var checkbox = document.getElementById("cons");
+        if (checkbox.checked) {
+        return true;
+        } else {
+        alert("Vous devez accepter la collecte de donnée.");
+        return false;
+        }
+    }
 
-          function isChecked(){
-            var checkbox = document.getElementById("cons");
-            if (checkbox.checked){
-                return true;
-            } else {
-                alert("Vous devez accepter la collecte de donnée."); 
-                return false;
-            }
-          }
+    function isValid() {
+        var isValid = isChecked();
+        document.getElementById("valid").disabled = !isValid;
+    }
 
-          function isValid(){
-            var isValid = isChecked();
-            document.getElementById("valid").disabled = !isValid;
-          }
-     </script>
+    document.getElementById("cons").onchange = function() {
+        isValid();
+    };
+    </script>
 </html>
