@@ -33,7 +33,7 @@
                     <p>Votre mot de passe doit contenir au moin 12 caractères, une majuscule, une minuscule, un chiffre et un caractère spéciale</p>
                 </div>
                 <div id="bouton" >
-                    <input type="submit" disabled id="valid"  value="Connexion">
+                    <input type="button"  id="valid"  value="Connexion">
                 </div>
                 </div>
             </div>

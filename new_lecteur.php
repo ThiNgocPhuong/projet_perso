@@ -7,6 +7,10 @@
     try{
         $objetPDO = new PDO('mysql:dbname='.BDD.';host='.HOST.';port='.PORT,LOGIN,PASSW);
 
+        if (!$objetPDO) {
+            die("Echec de connexion à la base de données : " . mysqli_connect_error());
+        }
+
         $request=$objetPDO->prepare('INSERT INTO lecteur (email, pseudo, mdp, date_concentement) Values(:email, :pseudo, :mdp, :date)');
 
         $request->bindValue(':email',$_POST['email'], PDO:: PARAM_STR);
@@ -37,13 +41,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link href="style_insert.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/form.css">
     <title>Insciption</title>
 </head>
 <body>
-    <div id="affichage">
+    <div id="contain">
         <!-- Affiche le message de reussite ou echec -->
-        <h1>Confirmation du formulaire</h1>
+        <h1>Confirmation de l'inscription</h1>
         <!-- Affichage des messages appelés -->
         <p><?php echo $mes ?>  </p>
         <!-- Bouton qui retourne vers la page du formulaire -->
