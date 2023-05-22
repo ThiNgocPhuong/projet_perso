@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Connexion à la base de données
 $servername = "localhost";
 $username = "Caroline";
@@ -7,14 +8,15 @@ $dbname = "projet_perso";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+
 // Vérification de la connexion
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 // Requête SQL pour récupérer les données
-$sql = "SELECT text FROM chapitre WHERE id LIKE 6";
-$result = $conn->query($sql);
+$sql=$conn->prepapre("SELECT text FROM chapitre WHERE id LIKE 6");
+$result = $sql->execute();
 ?>
 <html>
     <header>

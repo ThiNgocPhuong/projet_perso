@@ -4,9 +4,10 @@ grant all privilege on projet_perso to Caroline;
 create user Reader identified by "L3cteur*$";
 grant insert, select on projet_perso.lecteur to Reader;
 grant insert, select on projet_perso.parcours to Reader;
+grant select on projet_perso.chapitre to Reader;
 
 alter table lecteur ADD date_concentement date;
-
+alter table lecteur ADD id_chap integer;
 create database projet_perso;
 
 create table chapitre(
@@ -20,17 +21,17 @@ create table lecteur(
     pseudo varchar(50),
     mdp varchar(100),
     date_concentement date,
+    id_chap integer,
     primary key(email)
 );
 
 create table parcours (
-    id integer unique not null,
     email Varchar(50),
-    ordre Varchar(10),
-    primary key (id, email),
-    FOREIGN key (id) references chapitre(id),
+    choix1 integer,
+    choix2 integer,
+    choix3 integer,
+    primary key (email),
     FOREIGN key (email) references lecteur(email)
-
 );
 
 Insert into chapitre(id ,text) Values 

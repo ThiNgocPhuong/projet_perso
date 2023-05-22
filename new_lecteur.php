@@ -20,6 +20,10 @@
 
         $insertValid= $request->execute();
 
+        $requete=$objetPDO->prepare('INSERT INTO parcours(email) VALUE (:email)');
+        $request->bindValue(':email',$_POST['email'], PDO:: PARAM_STR);
+        $isValid=$requete->execute();
+
         if($insertValid)
         {
             $mes = 'Votre inscription a bien été pris en compte.';
@@ -41,7 +45,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="css/form.css">
     <title>Insciption</title>
 </head>
 <body>
@@ -52,7 +55,7 @@
         <p><?php echo $mes ?>  </p>
         <!-- Bouton qui retourne vers la page du formulaire -->
         <div id="bouton" class="bouton">
-                <a href="./index.html" >
+                <a href="./index.php" >
                     <button>Retour</button>
                 </a>
         </div>
